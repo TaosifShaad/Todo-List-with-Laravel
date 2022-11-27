@@ -1,0 +1,59 @@
+--------Vendor file could not be created (may be due to version mismatch), but
+after going to the php.ini file, uncommenting the line "extension = fileinfo", it worked.
+
+1. connect database in the .env file.
+
+--------php artisan migration was not working giving the error   
+
+Illuminate\Database\QueryException 
+  could not find driver (SQL: select * from information_schema.tables 
+where table_schema = todo_db and table_name = migrations and table_type = 'BASE TABLE')
+
+It worked after going to the php.ini file and uncommenting the line "extension = pdo_mysql."
+
+2. In the model, to prevent mass assignment, we use protected fillables.
+
+3. while routing, if there is a folder inside view, it can be put in the route with . notation.
+
+4. While in controllers, or any php file, check namespaces. It may be already used, or you may have to
+manually put use namespaces as well.
+
+5. Columns in the database tables can be given a default value, which can be done in 
+the migration file. After modifying migration file, php artisan migration:fresh
+will have to be run again.
+
+---------inserting into database not working, says "could not find driver".
+after providing a password in the .env file, it says access denied.
+
+It worked, after using - 
+    php artisan cache:clear
+    php artisan view:clear
+    php artisan route:clear
+and restarting the server.
+But could not solve the password problem. It worked only after I deleted the password 
+from the .env file, and performed task number 6. 
+
+6. After changing anything in the .env file, run php artisan config:cache command.
+
+7. Sessions and components.
+
+8. Validation (in the documentation basics).
+
+---------asset() function was used to maybe create a link, i am not sure.
+
+9. While editing a TODO, we are using patch, as we are updating an element in the 
+database. But html does not have patch, so it seems we are defining "@method('patch')".
+How this works, I do not know yet. 
+
+10. When we are submitting a form, we can have $request in the parameter in controller. 
+
+11. While editing a TODO, we are in the edit.php file. So far, we have passed data from 
+controller to view files. But now, we need to do the opposit. For that, in the form in the
+edit.php file, we can take another input.
+
+---------But, we are encountering a problem here. It seems, in the request parameter in the 
+controller file, $id is not present in the object, but the title is.
+The problem has been solved. I forgot to put name attribute, so the id was lost.
+
+12. The css folder needs to be put in the public folder. Then what is the css in the resources
+folder? Also, why the href needs to given inside a asset function?
