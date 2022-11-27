@@ -9,9 +9,7 @@
     <title>TODO create</title>
 </head>
 <body style="text-align:center; margin-top: 200px">
-    <div class='ball'></div>
-    <div class='ball ball1'></div>
-    <div class='ball ball2'></div>
+    < x-decor />
     <div class="container">
     <h1>Start creating TODO list</h1>
     <h3><x-alert /></h3>

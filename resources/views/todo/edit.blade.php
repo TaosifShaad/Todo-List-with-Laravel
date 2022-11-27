@@ -9,9 +9,7 @@
     <title>TODO edit</title>
 </head>
 <body style="text-align:center; margin-top: 200px">
-    <div class='ball'></div>
-    <div class='ball ball1'></div>
-    <div class='ball ball2'></div>
+    < x-decor />
     <h1>Edit TODO</h1>
     <h3 style="color:goldenrod"><x-alert /></h3>
     <form action="/update" method="post">

@@ -9,10 +9,7 @@
     <title>TODO home</title>
 </head>
 <body>
-    <div class='ball'></div>
-    <div class='ball ball1'></div>
-    <div class='ball ball2'></div>
-
+    < x-decor />
     <div class="container">
     <h1>All tasks TO DO!</h1>
     <hr style="color:blueviolet">

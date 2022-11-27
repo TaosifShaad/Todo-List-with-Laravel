@@ -1,5 +1,5 @@
 body {
-	background: linear-gradient(45deg, #ed4264cc, #ffedbc 100%) fixed;
+    background: linear-gradient(45deg, #ed4264cc, #ffedbc 100%) fixed;
 }
 
 .container {
@@ -68,10 +68,13 @@ body {
 }
 
 .ball1 {
-    top: -100px;
-    animation-name: run1;
-    animation-duration: 30s;
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+	top: 74px;
+	animation-name: run1;
+	animation-duration: 4s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+	left: 23%;
+	z-index: 1;
 }
 
 .ball2 {
@@ -81,29 +84,49 @@ body {
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
+.ball3 {
+    top: 730px;
+    animation-name: run3;
+    animation-duration: 25s;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
 @keyframes run {
     0% {
         transform: translate(-300px, 400px) rotate(-2880deg);
     }
     100% {
-        transform: translate(1500px) rotate(1440deg);
+        transform: translate(1475px) rotate(1440deg);
     }
 }
 
 @keyframes run1 {
     0% {
-        transform: translate(-300px, 200px) rotate(1440deg);
+        transform: rotate(-360deg);
+    }
+    50% {
+        transform: rotate(360deg);
+        background-color: blueviolet;
     }
     100% {
-        transform: translate(1500px) rotate(-3600deg);
+        transform: rotate(-360deg);
     }
 }
 
 @keyframes run2 {
     0% {
-        transform: translate(-300px, 0px) rotate(-2160deg);
+        transform: translate(-300px, 0px) rotate(2160deg);
     }
     100% {
-        transform: translate(1500px, -350px) rotate(1440deg);
+        transform: translate(1475px, -350px) rotate(-1440deg);
+    }
+}
+
+@keyframes run3 {
+    0% {
+        transform: translate(-300px, -100px) rotate(-2160deg);
+    }
+    100% {
+        transform: translate(1475px, -450px) rotate(360deg);
     }
 }
