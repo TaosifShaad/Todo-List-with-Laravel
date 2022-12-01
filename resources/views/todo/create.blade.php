@@ -15,7 +15,7 @@
     <h3><x-alert /></h3>
     <form action="/upload" method="post">
         @csrf
-        <input class="write" type="text" name="title" />
+        <input class="write" type="text" name="title" value="{{ old('title') }}"/>
         <input class="done" type="submit" value="Create" />
     </form>
     <br>
